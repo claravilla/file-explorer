@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 function BreadCrumbs({
   path,
   setFolder,
@@ -12,14 +14,14 @@ function BreadCrumbs({
     folders.shift();
     const pathElements = folders.map<React.ReactNode>((element) => {
       return (
-        <>
+        <Fragment key={element}>
           <span
             className="breadcrumbs-element"
             onClick={() => setFolder(element)}
           >
             /{element}
           </span>
-        </>
+        </Fragment>
       );
     });
     breadcrumbs = pathElements.reduce((prev, curr) => [prev, curr]);

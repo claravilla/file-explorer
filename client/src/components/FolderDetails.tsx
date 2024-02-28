@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import ListElement from "./ListElement";
 
 import axios from "axios";
@@ -49,7 +49,7 @@ function FolderDetails({
             name={folderDetails?.folderName as string}
             icon="📁"
             setFolder={setFolder}
-          />{" "}
+          />
           <ul>
             {folderDetails?.folderChildren.map((child: string) => {
               return (

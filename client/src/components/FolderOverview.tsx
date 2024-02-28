@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 import { FolderDetailType } from "../types/types";
 import ListElement from "./ListElement";
@@ -40,9 +40,9 @@ function FolderOverview({ setFolder }: { setFolder: Function }) {
     ]);
 
     return (
-      <>
+      <Fragment key={Math.random()}>
         <ul>{combinedChildrenList}</ul>
-      </>
+      </Fragment>
     );
   };
 
@@ -58,7 +58,7 @@ function FolderOverview({ setFolder }: { setFolder: Function }) {
         const details = folderDetails(child);
         if (details.folderChildren.length === 1) {
           return (
-            <>
+            <Fragment key={child}>
               <ListElement name={child} icon="⊟" setFolder={setFolder} />
               <ul>
                 <ListElement
@@ -67,15 +67,15 @@ function FolderOverview({ setFolder }: { setFolder: Function }) {
                   setFolder={setFolder}
                 />
               </ul>
-            </>
+            </Fragment>
           );
         } else if (details.folderChildren.length > 1) {
           const childrenList = createChildrenList(details.folderChildren);
           return (
-            <>
+            <Fragment key={child}>
               <ListElement name={child} icon="⊟" setFolder={setFolder} />
               {childrenList}
-            </>
+            </Fragment>
           );
         } else {
           return <ListElement name={child} icon="⊟" setFolder={setFolder} />;
