@@ -5,15 +5,15 @@ As this app is only available locally, both client and server are in the same re
 
 ## Assumption and limitation
 
-This app assume that only one root folder is present and all subsequential folders are created inside the root folder (or sub-folder).
+This app assumes that only one root folder is present and all subsequential folders are created inside the root folder (or sub-folder).
 
-The left panel can only display 2 levels of subfolder (no files).
-The right panel only display one level of subfolder and files.
+The left panel only displays 2 levels of subfolder (no files).
+The right panel only displays one level of subfolder and files.
 
 ## Data Model
 
 This app used MongoDB which is a non relational database.
-The main challenge is to create a relation between the folders and the files that can easily be used to displat the folder trees in the FE.
+The main challenge is to create a relation between the folders and the files that can easily be used to display the folder trees in the FE. This has been achieved by adding a fields that contains parent and children details.
 
 ### Folder Data Model
 
@@ -28,24 +28,28 @@ The main challenge is to create a relation between the folders and the files tha
 - Name
 - Source
 
-The parent folders is not store at the file level, but upon creating a separate call is made to update the Folder with the file name.
+The parent folders is not stored at the file level, but upon uploading a file a separate call is made to update the Folder with the file name.
 
 ## How to use it
 
 Clone this repo.
+
 Create a .env file for the client with variable:
 REACT_APP_SERVER_URL='http://localhost:8080'
 
-Create a .env file for the server with variabl:
-MONGODB_URI={your own mongoDB to connect to}  
+Create a .env file for the server with variable:
+MONGODB_URI={your own mongoDB to connect to}
+
+Install dependencies
+
 `cd server` and run `npm install`  
 `cd client` and run `npm install`
 
-**To start the server:**
-`cd server`
+**To start the server:**  
+`cd server`  
 `npm start`  
-**To start the client:**
-`cd client`
+**To start the client:**  
+`cd client`  
 `npm start`
 
 ### Next steps
