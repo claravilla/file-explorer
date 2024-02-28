@@ -1,0 +1,91 @@
+body {
+  background-color: rgb(200, 235, 224);
+  margin: 60px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 40px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.actions-bar {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.breadcrumbs {
+  margin: 20px 0;
+}
+
+.breadcrumbs-element {
+  color: rgb(37, 37, 163);
+  text-decoration: underline;
+}
+.custom-upload-button {
+  background-color: rgb(238, 233, 233);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 15px 15px 15px 0px;
+  padding: 10px;
+}
+
+.error-message {
+  color: red;
+  margin: 20px;
+}
+
+.explorer-container {
+  display: flex;
+  justify-content: space-around;
+}
+.folder-details {
+  background-color: white;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 30px 0;
+  padding: 20px;
+}
+
+.folders-overview {
+  background-color: white;
+  border: 2px solid black;
+  width: 30%;
+  margin: 30px 0;
+  padding: 20px;
+}
+
+.pipe-actions-bar {
+  background-color: black;
+  height: 50px;
+  margin: 0 15px 0 0;
+  width: 5px;
+}
+
+.pipe-folder-explorer {
+  background-color: black;
+  width: 5px;
+}
+
+.tree-line {
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  height: 1.5rem;
+  width: 2rem;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  margin-left: 1rem;
+}
