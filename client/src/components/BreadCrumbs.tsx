@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 function BreadCrumbs({
   path,
   setFolder,
@@ -10,7 +8,6 @@ function BreadCrumbs({
   let breadcrumbs: React.ReactNode;
 
   if (path !== undefined) {
-    console.log(path);
     const folders = path.split("/");
     folders.shift();
     const pathElements = folders.map<React.ReactNode>((element) => {
@@ -25,7 +22,6 @@ function BreadCrumbs({
         </>
       );
     });
-    console.log(pathElements.length);
     breadcrumbs = pathElements.reduce((prev, curr) => [prev, curr]);
   }
 

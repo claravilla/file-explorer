@@ -39,7 +39,7 @@ folderRoutes.post("/create", async (req: Request, res: Response) => {
           { new: true }
         );
       }
-      res.status(200).send("Folder successfully created"); //see if this needs to be redirect to home page
+      res.status(200).send("Folder successfully created");
     }
   } catch (err) {
     res.status(500).send({ error: `Something went wrong, ${err}` });
