@@ -3,7 +3,7 @@
 This is small prototype of a file explorer where you can create new folder and upload file csv or geojson file.
 As this app is only available locally, both client and server are in the same repo, under their homonym folder.
 
-## Assumption and limitation
+## Assumptions and limitations
 
 This app assumes that only one root folder is present and all subsequential folders are created inside the root folder (or sub-folder).
 
