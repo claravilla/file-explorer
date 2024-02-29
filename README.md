@@ -1,34 +1,37 @@
 # File Explorer
 
-This is small prototype of a file explorer where you can create new folder and upload file csv or geojson file.
+This is small prototype of a file explorer where you can create new folders and upload csv or geojson file.
 As this app is only available locally, both client and server are in the same repo, under their homonym folder.
 
 ## Assumptions and limitations
 
-This app assumes that only one root folder is present and all subsequential folders are created inside the root folder (or sub-folder).
+This app assumes that only one root folder is present and all subsequential folders are created inside the root folder (or its sub-folders).
 
-The left panel only displays 2 levels of subfolder (no files).
+The left panel only displays 2 levels of subfolders (no files).
 The right panel only displays one level of subfolder and files.
 
 ## Data Model
 
 This app used MongoDB which is a non relational database.
-The main challenge is to create a relation between the folders and the files that can easily be used to display the folder trees in the FE. This has been achieved by adding a fields that contains parent and children details.
+The main challenge is to create a relation between folders and files that can easily be used to display the folder trees in the FE. This has been achieved by adding fields that contain parent and children details.
 
 ### Folder Data Model
 
-- Folder Name
+- Folder Name: unique key
 - Parent Folder
-- Path: this is used for the breadcrumbs in the folder detailed view
+- Path
 - FolderChildren
-- Files: this is used to list all the files saved in the folder
+- Files
+
+The path field is used for the breadcrumbs in the folder detailed view.  
+The files field contains all files that belong to the folder and it's used for the detailed view.
 
 ### File Data Model
 
-- Name
+- Name: unique key
 - Source
 
-The parent folders is not stored at the file level, but upon uploading a file a separate call is made to update the Folder with the file name.
+The parent folders is not stored at the file level, but upon uploading a file a separate call is made to add the file name the Files field of the Folder.
 
 ## How to use it
 
